@@ -1,4 +1,13 @@
-var singleton = function() {
+var singleton = (function() {
+
+    var initiated;
+
+    function init() {
+        return {
+            publicFunction: privateFunction,
+            publicField: "public field"
+        };
+    }
 
     var privateField = "private field";
 
@@ -7,7 +16,12 @@ var singleton = function() {
     }
 
     return {
-        publicFunction: privateFunction,
-        publicField: "public field"
-    }
-}
+        getInstance: function() {
+            if (!initiated) {//lazy initialization.
+                initiated = init();
+            }
+            return initiated;
+        }
+    };
+
+})();

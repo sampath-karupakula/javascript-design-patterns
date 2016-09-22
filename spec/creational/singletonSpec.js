@@ -1,6 +1,6 @@
 describe("Singleton design pattern test suit", function() {
     describe("internal part access", function() {
-        var single = singleton();
+        var single = singleton.getInstance();
         it("access internal property privateField", function() {
             expect(single.privateField).toBeUndefined();
         });
@@ -10,7 +10,7 @@ describe("Singleton design pattern test suit", function() {
     });
 
     describe("internal part access through public functions", function() {
-        var single = singleton();
+        var single = singleton.getInstance();
         it("access internal property public Field", function() {
             expect(single.publicField).toEqual("public field");
         });
