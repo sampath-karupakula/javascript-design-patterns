@@ -18,5 +18,18 @@ describe("Singleton design pattern test suit", function() {
             expect(single.publicFunction()).toEqual("called private function");
         })
     });
+    describe("Singleton Tester testing", function() {
+        var single = SingletonTester;
+        it("accesssing the static part", function() {
+            expect(single.name).toEqual("SingletonTester");
+            expect(single.pointX).toBeUndefined();
+        });
+        it("accesssing the instance", function() {
+            var single = SingletonTester.getInstance({ pointX: 10, pointY: 20 });
+            expect(single.name).toEqual("SingletonTester");
+            expect(single.pointX).toEqual(10);
+            expect(single.pointY).toEqual(20);
+        });
+    });
 
 })
