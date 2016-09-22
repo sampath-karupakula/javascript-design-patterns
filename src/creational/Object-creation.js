@@ -29,9 +29,9 @@ function Car(name, model, milage) {
     this.model = model;
     this.milage = milage;
 
-    
+
 };
 
 Car.prototype.this.toString = function() {
-        return this.name + " gives " + this.milage + "miles";
-    };
+    return this.name + " gives " + this.milage + "miles";
+};
